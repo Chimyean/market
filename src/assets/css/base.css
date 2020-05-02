@@ -1,0 +1,54 @@
+@import "./normalize.css";
+
+/* 这个伪类用于获取根元素 这里定义了一些变量 */
+:root {
+  --color-text: #666;
+  --color-high-text: #ff5777;
+  /* 整体色 涂上去的颜色 */
+  --color-tint: #D4237A;
+  --color-background: #fff;
+  --font-size: 14px;
+  --line-height: 1.5;
+}
+
+*,
+*::before 
+*::after {
+  margin: 0;
+  padding: 0;
+  /* 设置盒子尺寸，border-box表示width包含边框 内边距 宽度 */
+  box-sizing: border-box;
+}
+
+body {
+  /* 禁止用户选中网页中的文字 图片等 */
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  background: var(--color-background);
+  /* webkit是苹果浏览器引擎 tap点击 highlight背景高亮 color颜色 颜色用数值调节 */
+  -webkit-tap-highlight-color: transparent;
+  color: var(--color-text);
+  width: 100vw;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.clear-fix::after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.left {
+  float: left;
+}
